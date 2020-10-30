@@ -69,12 +69,11 @@
   </div>
 </template>
 
-
 <script>
 import firebase from 'firebase'
 
 export default {
-  data() {
+  data () {
     return {
       form: {
         name: '',
@@ -82,10 +81,10 @@ export default {
         password: ''
       },
       error: null
-    };
+    }
   },
   methods: {
-    submit() {
+    submit () {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.form.email, this.form.password)
@@ -94,6 +93,7 @@ export default {
             .updateProfile({
               displayName: this.form.name
             })
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
             .then(() => {})
         })
         .catch(err => {
