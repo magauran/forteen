@@ -11,8 +11,10 @@
     "core-js": "^3.6.5",
     "firebase": "7.20.0",
     "ismobilejs": "^1.1.1",
+    "odometer": "^0.4.8",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
+    "vue-odometer": "^1.0.2",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.4.3",
     "vuex": "^3.5.1"

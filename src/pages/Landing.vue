@@ -68,15 +68,27 @@
             <dl class="landing-stats">
               <div>
                 <dt class="landing-stats">исполнителей</dt>
-                <dd class="landing-stats">4578</dd>
+                <IOdometer
+                  class="iOdometer"
+                  :value="performers"
+                  :format="'d'"
+                />
               </div>
               <div>
                 <dt class="landing-stats">подарков<br/>получено</dt>
-                <dd class="landing-stats">8568</dd>
+                <IOdometer
+                  class="iOdometer"
+                  :value="gifts"
+                  :format="'d'"
+                />
               </div>
               <div>
                 <dt class="landing-stats">заказчиков</dt>
-                <dd class="landing-stats">5588</dd>
+                <IOdometer
+                  class="iOdometer"
+                  :value="customers"
+                  :format="'d'"
+                />
               </div>
             </dl>
           </div>
@@ -131,6 +143,9 @@ import IconInstagram from '@/components/Icons/IconInstagram'
 import IconGoogle from '@/components/Icons/IconGoogle'
 import IconVk from '@/components/Icons/IconVK'
 
+import IOdometer from 'vue-odometer'
+import 'odometer/themes/odometer-theme-default.css'
+
 export default {
   name: 'Landing',
   components: {
@@ -139,7 +154,33 @@ export default {
     IconTwitter,
     IconInstagram,
     IconGoogle,
-    IconVk
+    IconVk,
+    IOdometer
+  },
+  data () {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const formatOdometer = function (val, val2) {
+      return val + val2
+    }
+
+    return {
+      performers: 4578,
+      gifts: 8578,
+      customers: 5588
+    }
+  },
+  mounted () {
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const that = this
+    setInterval(function () {
+      that.performers += 1
+    }, 7000)
+    setInterval(function () {
+      that.gifts += 1
+    }, 3000)
+    setInterval(function () {
+      that.customers += 1
+    }, 11000)
   }
 }
 </script>
@@ -326,16 +367,6 @@ export default {
     text-align: center;
     color: #4F4F4F;
   }
-  dd.landing-stats {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 60px;
-    line-height: 73px;
-    display: flex;
-    margin: 0;
-    color: #49C0B8;
-  }
   .landing-company-info>p {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -371,5 +402,15 @@ export default {
   .landing-content {
     background-color: white;
     min-height: calc(100vh - 350px);
+  }
+  .iOdometer {
+    font-family: 'Cousine', monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 73px;
+    display: flex;
+    margin: 0;
+    color: #49C0B8;
   }
 </style>
