@@ -197,7 +197,7 @@ export default {
     flex-direction: column;
     flex-grow: 2;
     max-width: 1280px;
-    margin-top: 96px;
+    margin-top: 32px;
     margin-left: 32px;
     margin-right: 32px;
   }
@@ -220,7 +220,7 @@ export default {
     flex-wrap: nowrap;
   }
   .landing-social-buttons button:not(:first-of-type) {
-    margin-left: 40px;
+    margin-left: 20px;
   }
   .section-content {
     max-width: 1280px;
@@ -229,7 +229,7 @@ export default {
     display: flex;
   }
   .first-section {
-    min-height: 720px;
+    min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -269,7 +269,7 @@ export default {
   }
   .second-section-img {
     flex-basis: 686px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     position: relative;
   }
   .second-section-img>button {
@@ -305,7 +305,7 @@ export default {
     flex-direction: column;
   }
   .third-section {
-    height: 720px;
+    height: 520px;
     display: flex;
     justify-content: center;
   }
@@ -363,7 +363,6 @@ export default {
     font-style: normal;
     font-weight: normal;
     font-size: 34px;
-    line-height: 41px;
     text-align: center;
     color: #4F4F4F;
   }
