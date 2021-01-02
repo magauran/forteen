@@ -54,7 +54,9 @@
             </div>
             <div class="second-section-img">
               <img src="@/assets/landing_section2_img.svg" alt="People with an iPhone">
-              <button v-on:click="copyURL">
+              <button v-clipboard="clipboardItem"
+                      v-clipboard:success="clipboardSuccessHandler"
+                      v-clipboard:error="clipboardErrorHandler">
                 Скопировать
               </button>
               <v-snackbar
@@ -172,7 +174,8 @@ export default {
       snackbarText: 'Ссылка на сайт скопирована',
       performers: 4578,
       gifts: 8578,
-      customers: 5588
+      customers: 5588,
+      clipboardItem: 'ForTeen.ru'
     }
   },
   mounted () {
@@ -201,8 +204,12 @@ export default {
     vk: function () {
       window.open('https://vk.com', '_blank')
     },
-    copyURL: function () {
+    clipboardSuccessHandler ({ value }) {
+      console.log('success', value)
       this.snackbar = true
+    },
+    clipboardErrorHandler ({ value }) {
+      console.log('error', value)
     }
   }
 }

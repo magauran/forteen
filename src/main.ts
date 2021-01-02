@@ -4,6 +4,9 @@ import router from './routes/index'
 import * as firebase from 'firebase'
 import store from './store'
 import vuetify from './plugins/vuetify'
+import Clipboard from 'v-clipboard'
+
+Vue.use(Clipboard)
 
 Vue.config.productionTip = false
 
