@@ -8,22 +8,22 @@
               <img src="@/assets/logo.svg" alt="Site logo">
             </div>
             <div class="landing-social-buttons">
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="twitter">
                 <icon-base icon-name="twitter">
                   <icon-twitter/>
                 </icon-base>
               </social-button>
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="google">
                 <icon-base icon-name="google">
                   <icon-google/>
                 </icon-base>
               </social-button>
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="instagram">
                 <icon-base icon-name="instagram">
                   <icon-instagram/>
                 </icon-base>
               </social-button>
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="vk">
                 <icon-base icon-name="vk">
                   <icon-vk/>
                 </icon-base>
@@ -54,9 +54,17 @@
             </div>
             <div class="second-section-img">
               <img src="@/assets/landing_section2_img.svg" alt="People with an iPhone">
-              <button>
+              <button v-on:click="copyURL">
                 Скопировать
               </button>
+              <v-snackbar
+                v-model="snackbar"
+                :timeout="snackbarTimeout"
+                color="#7480FF"
+                outlined
+              >
+                {{ snackbarText }}
+              </v-snackbar>
             </div>
           </div>
         </div>
@@ -108,22 +116,22 @@
             <img src="@/assets/logo-white.svg" alt="Site logo">
           </div>
           <div class="landing-social-buttons">
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="twitter">
               <icon-base icon-name="twitter">
                 <icon-twitter/>
               </icon-base>
             </social-button>
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="google">
               <icon-base icon-name="google">
                 <icon-google/>
               </icon-base>
             </social-button>
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="instagram">
               <icon-base icon-name="instagram">
                 <icon-instagram/>
               </icon-base>
             </social-button>
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="vk">
               <icon-base icon-name="vk">
                 <icon-vk/>
               </icon-base>
@@ -158,12 +166,10 @@ export default {
     IOdometer
   },
   data () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const formatOdometer = function (val, val2) {
-      return val + val2
-    }
-
     return {
+      snackbar: false,
+      snackbarTimeout: 2000,
+      snackbarText: 'Ссылка на сайт скопирована',
       performers: 4578,
       gifts: 8578,
       customers: 5588
@@ -181,6 +187,23 @@ export default {
     setInterval(function () {
       that.customers += 1
     }, 11000)
+  },
+  methods: {
+    twitter: function () {
+      window.open('https://twitter.com', '_blank')
+    },
+    google: function () {
+      window.open('https://google.com', '_blank')
+    },
+    instagram: function () {
+      window.open('https://instagram.com', '_blank')
+    },
+    vk: function () {
+      window.open('https://vk.com', '_blank')
+    },
+    copyURL: function () {
+      this.snackbar = true
+    }
   }
 }
 </script>
@@ -265,10 +288,11 @@ export default {
     align-content: space-between;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   .second-section-img {
     flex-basis: 686px;
-    margin-bottom: 20px;
     position: relative;
   }
   .second-section-img>button {
