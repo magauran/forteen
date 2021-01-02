@@ -204,7 +204,6 @@ export default {
   .landing-bar {
     display: flex;
     flex-direction: row;
-    flex-grow: 2;
     justify-content: space-between;
     height: 48px;
     max-width: 1280px;
@@ -366,6 +365,9 @@ export default {
     text-align: center;
     color: #4F4F4F;
   }
+  .landing-company-info {
+    margin-bottom: 42px;
+  }
   .landing-company-info>p {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
@@ -379,7 +381,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 350px;
+    height: 280px;
     background-color: #828282;
   }
   .landing-footer-content {
@@ -389,6 +391,7 @@ export default {
     max-width: 1280px;
     margin-left: 32px;
     margin-right: 32px;
+    justify-content: center;
   }
   a {
     text-decoration: none;

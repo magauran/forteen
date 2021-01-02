@@ -17,6 +17,7 @@
     "vue-odometer": "^1.0.2",
     "vue-property-decorator": "^8.4.2",
     "vue-router": "^3.4.3",
+    "vuetify": "^2.2.11",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-vuetify": "~2.0.9",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
