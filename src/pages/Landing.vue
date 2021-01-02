@@ -8,22 +8,22 @@
               <img src="@/assets/logo.svg" alt="Site logo">
             </div>
             <div class="landing-social-buttons">
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="twitter">
                 <icon-base icon-name="twitter">
                   <icon-twitter/>
                 </icon-base>
               </social-button>
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="google">
                 <icon-base icon-name="google">
                   <icon-google/>
                 </icon-base>
               </social-button>
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="instagram">
                 <icon-base icon-name="instagram">
                   <icon-instagram/>
                 </icon-base>
               </social-button>
-              <social-button class="button">
+              <social-button class="button" v-on:click.native="vk">
                 <icon-base icon-name="vk">
                   <icon-vk/>
                 </icon-base>
@@ -54,9 +54,19 @@
             </div>
             <div class="second-section-img">
               <img src="@/assets/landing_section2_img.svg" alt="People with an iPhone">
-              <button>
+              <button v-clipboard="clipboardItem"
+                      v-clipboard:success="clipboardSuccessHandler"
+                      v-clipboard:error="clipboardErrorHandler">
                 Скопировать
               </button>
+              <v-snackbar
+                v-model="snackbar"
+                :timeout="snackbarTimeout"
+                color="#7480FF"
+                outlined
+              >
+                {{ snackbarText }}
+              </v-snackbar>
             </div>
           </div>
         </div>
@@ -108,22 +118,22 @@
             <img src="@/assets/logo-white.svg" alt="Site logo">
           </div>
           <div class="landing-social-buttons">
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="twitter">
               <icon-base icon-name="twitter">
                 <icon-twitter/>
               </icon-base>
             </social-button>
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="google">
               <icon-base icon-name="google">
                 <icon-google/>
               </icon-base>
             </social-button>
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="instagram">
               <icon-base icon-name="instagram">
                 <icon-instagram/>
               </icon-base>
             </social-button>
-            <social-button class="button">
+            <social-button class="button" v-on:click.native="vk">
               <icon-base icon-name="vk">
                 <icon-vk/>
               </icon-base>
@@ -158,15 +168,14 @@ export default {
     IOdometer
   },
   data () {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const formatOdometer = function (val, val2) {
-      return val + val2
-    }
-
     return {
+      snackbar: false,
+      snackbarTimeout: 2000,
+      snackbarText: 'Ссылка на сайт скопирована',
       performers: 4578,
       gifts: 8578,
-      customers: 5588
+      customers: 5588,
+      clipboardItem: 'ForTeen.ru'
     }
   },
   mounted () {
@@ -181,6 +190,27 @@ export default {
     setInterval(function () {
       that.customers += 1
     }, 11000)
+  },
+  methods: {
+    twitter: function () {
+      window.open('https://twitter.com', '_blank')
+    },
+    google: function () {
+      window.open('https://google.com', '_blank')
+    },
+    instagram: function () {
+      window.open('https://instagram.com', '_blank')
+    },
+    vk: function () {
+      window.open('https://vk.com', '_blank')
+    },
+    clipboardSuccessHandler ({ value }) {
+      console.log('success', value)
+      this.snackbar = true
+    },
+    clipboardErrorHandler ({ value }) {
+      console.log('error', value)
+    }
   }
 }
 </script>
@@ -197,14 +227,13 @@ export default {
     flex-direction: column;
     flex-grow: 2;
     max-width: 1280px;
-    margin-top: 96px;
+    margin-top: 32px;
     margin-left: 32px;
     margin-right: 32px;
   }
   .landing-bar {
     display: flex;
     flex-direction: row;
-    flex-grow: 2;
     justify-content: space-between;
     height: 48px;
     max-width: 1280px;
@@ -220,7 +249,7 @@ export default {
     flex-wrap: nowrap;
   }
   .landing-social-buttons button:not(:first-of-type) {
-    margin-left: 40px;
+    margin-left: 20px;
   }
   .section-content {
     max-width: 1280px;
@@ -229,7 +258,7 @@ export default {
     display: flex;
   }
   .first-section {
-    min-height: 720px;
+    min-height: 620px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,10 +295,11 @@ export default {
     align-content: space-between;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
   .second-section-img {
     flex-basis: 686px;
-    margin-bottom: 50px;
     position: relative;
   }
   .second-section-img>button {
@@ -305,7 +335,7 @@ export default {
     flex-direction: column;
   }
   .third-section {
-    height: 720px;
+    height: 520px;
     display: flex;
     justify-content: center;
   }
@@ -363,9 +393,11 @@ export default {
     font-style: normal;
     font-weight: normal;
     font-size: 34px;
-    line-height: 41px;
     text-align: center;
     color: #4F4F4F;
+  }
+  .landing-company-info {
+    margin-bottom: 42px;
   }
   .landing-company-info>p {
     font-family: 'Montserrat', sans-serif;
@@ -380,7 +412,7 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 350px;
+    height: 280px;
     background-color: #828282;
   }
   .landing-footer-content {
@@ -390,6 +422,7 @@ export default {
     max-width: 1280px;
     margin-left: 32px;
     margin-right: 32px;
+    justify-content: center;
   }
   a {
     text-decoration: none;
