@@ -54,7 +54,8 @@
             </div>
             <div class="second-section-img">
               <img src="@/assets/landing_section2_img.svg" alt="People with an iPhone">
-              <button v-clipboard="clipboardItem"
+              <button class="plain-button"
+                      v-clipboard="clipboardItem"
                       v-clipboard:success="clipboardSuccessHandler"
                       v-clipboard:error="clipboardErrorHandler">
                 Скопировать
@@ -75,32 +76,7 @@
         <div class="section-content">
           <div class="third-section-content">
             <h2>ForTeen в цифрах</h2>
-            <dl class="landing-stats">
-              <div>
-                <dt class="landing-stats">исполнителей</dt>
-                <IOdometer
-                  class="iOdometer"
-                  :value="performers"
-                  :format="'d'"
-                />
-              </div>
-              <div>
-                <dt class="landing-stats">подарков<br/>получено</dt>
-                <IOdometer
-                  class="iOdometer"
-                  :value="gifts"
-                  :format="'d'"
-                />
-              </div>
-              <div>
-                <dt class="landing-stats">заказчиков</dt>
-                <IOdometer
-                  class="iOdometer"
-                  :value="customers"
-                  :format="'d'"
-                />
-              </div>
-            </dl>
+            <landing-stats/>
           </div>
         </div>
       </div>
@@ -153,28 +129,24 @@ import IconInstagram from '@/components/Icons/IconInstagram'
 import IconGoogle from '@/components/Icons/IconGoogle'
 import IconVk from '@/components/Icons/IconVK'
 
-import IOdometer from 'vue-odometer'
-import 'odometer/themes/odometer-theme-default.css'
+import LandingStats from '@/components/LandingStats/LandingStats'
 
 export default {
   name: 'Landing',
   components: {
+    LandingStats,
     SocialButton,
     IconBase,
     IconTwitter,
     IconInstagram,
     IconGoogle,
-    IconVk,
-    IOdometer
+    IconVk
   },
   data () {
     return {
       snackbar: false,
       snackbarTimeout: 2000,
       snackbarText: 'Ссылка на сайт скопирована',
-      performers: 4578,
-      gifts: 8578,
-      customers: 5588,
       clipboardItem: 'ForTeen.ru'
     }
   },
@@ -376,26 +348,6 @@ export default {
     text-align: left;
     color: #000000;
   }
-  dl.landing-stats {
-    display: flex;
-    flex-direction: row;
-  }
-  dl.landing-stats>div {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  dt.landing-stats {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 34px;
-    text-align: center;
-    color: #4F4F4F;
-  }
   .landing-company-info {
     margin-bottom: 42px;
   }
@@ -436,14 +388,7 @@ export default {
     background-color: white;
     min-height: calc(100vh - 350px);
   }
-  .iOdometer {
-    font-family: 'Cousine', monospace;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 73px;
-    display: flex;
-    margin: 0;
-    color: #49C0B8;
+  .third-section-content>h2 {
+    margin-bottom: 32px;
   }
 </style>
