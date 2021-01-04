@@ -10,6 +10,8 @@ Vue.use(Clipboard)
 
 Vue.config.productionTip = false
 
+export const bus = new Vue()
+
 const firebaseConfig = {
   apiKey: 'AIzaSyAgi_bXoT9A13pW2htUsr34xoalJqB_pb8',
   authDomain: 'teenagers-30cce.firebaseapp.co',
