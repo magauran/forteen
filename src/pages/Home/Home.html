@@ -1,11 +1,12 @@
 <div>
     <v-app>
-        <v-app-bar color="#fff" elevate-on-scroll app>
+        <v-app-bar color="#fff" dense flat app>
             <img class="icon" src="@/assets/logo.svg" alt="Site logo">
             <v-spacer></v-spacer>
             <button class="link-button">Войти</button>
-            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
         </v-app-bar>
+        <menu-overlay :menus="links"></menu-overlay>
         <v-content class="home">
             <h1>Подарки за задания!</h1>
             <img src="../../assets/home_img.svg" alt="Girl with gifts">
