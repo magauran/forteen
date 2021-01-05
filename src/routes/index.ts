@@ -11,11 +11,15 @@ Vue.use(Router)
 
 const isMobileDevice = isMobile(navigator).any
 
+function adjustedComponent (component: Vue.Component) {
+  return isMobileDevice ? component : Landing
+}
+
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: isMobileDevice ? Home : Landing,
+    component: adjustedComponent(Home),
     meta: {
       title: 'ForTeen'
     }
@@ -23,17 +27,17 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login
+    component: adjustedComponent(Login)
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: adjustedComponent(Register)
   },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: adjustedComponent(Dashboard)
   }
 ]
 
