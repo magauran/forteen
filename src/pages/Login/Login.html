@@ -1,19 +1,27 @@
 <div>
     <v-app>
-        <v-app-bar color="#fff" dense flat app>
-            <img class="icon" src="@/assets/logo.svg" alt="Site logo">
-            <v-spacer></v-spacer>
-            <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
-        </v-app-bar>
         <v-main class="login">
+            <v-app-bar color="#fff" dense flat app>
+                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
+                <v-spacer></v-spacer>
+                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
+            </v-app-bar>
             <img class="login-illustration" src="@/assets/login_img.svg" alt="Guy with the smartphone">
             <form class="login-container">
                 <label for="email">Email</label>
-                <input type="email" placeholder="email@address.com" id="email" required>
+                <input id="email"
+                       type="email"
+                       placeholder="email@address.com"
+                       required
+                       v-model="form.email"
+                />
 
-                <label for="psw">Пароль</label>
-                <input type="password"
-                       id="psw" required minlength="6">
+                <label for="password">Пароль</label>
+                <input id="password"
+                       type="password"
+                       required minlength="6"
+                       v-model="form.password"
+                />
 
                 <label for="register">Нет аккаунта?</label>
                 <input class="link-button"
@@ -21,7 +29,7 @@
                        value="Зарегистрироваться"
                        id="register">
 
-                <button class="plain-button" id="login-button">Войти</button>
+                <button type="button" class="plain-button" id="login-button" v-on:click="submit">Войти</button>
             </form>
         </v-main>
     </v-app>
