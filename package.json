@@ -56,7 +56,10 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "no-unused-expressions": "off",
+      "@typescript-eslint/no-unused-expressions": "error"
+    }
   },
   "browserslist": [
     "> 1%",

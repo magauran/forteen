@@ -38,6 +38,11 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: adjustedComponent(Dashboard)
+  },
+  {
+    path: '/tasks',
+    name: 'Tasks',
+    component: adjustedComponent(Home) // TODO:
   }
 ]
 
