@@ -9,7 +9,36 @@
             <h1>Задания на улице</h1>
             <div v-for="(task) in tasks" v-bind:key="(task)">
                 <div class="task-card">
-                    <p>{{task.name}}</p>
+                    <div id="card-header">
+                        <img id="image-decoration" src="@/assets/task_card-image_decoration.svg" alt="">
+                        <div id="profit">
+                            200 TB
+                        </div>
+                        <button id="like">
+                            <img src="@/assets/heart_icon.svg">
+                        </button>
+                    </div>
+                    <img id="task-image" :src=task.image alt="Task image">
+                    <div id="card-details">
+                        <h2>{{task.name}}</h2>
+                        <hr/>
+                        <p id="card-description">{{task.description}}</p>
+                        <div id="card-details-footer">
+                            <div id="card-details-footer-left">
+                                <div class="card-details-footer-item">
+                                    <img class="card-detail-icon" src="@/assets/calendar_icon.svg" alt="Site logo">
+                                    <p>14 декабря</p>
+                                </div>
+                                <div class="card-details-footer-item">
+                                    <img class="card-detail-icon" src="@/assets/pin_icon.svg" alt="Site logo">
+                                    <p>Петроградский район Санкт-Петербурга</p>
+                                </div>
+                            </div>
+                            <div id="card-details-footer-right">
+                                <button id="write-button">Написать</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </v-main>
