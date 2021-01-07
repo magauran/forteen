@@ -10,5 +10,8 @@ export default Vue.extend({
     }
   },
   methods: {
+    select: function (type: number) {
+      this.$router.push({ name: 'TasksCategory' })
+    }
   }
 })

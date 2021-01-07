@@ -5,6 +5,7 @@ import Landing from '../pages/Landing.vue'
 import Login from '../pages/Login/Login.vue'
 import Registration from '../pages/Registration/Registration.vue'
 import Tasks from '@/pages/Tasks/Tasks.vue'
+import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
 import isMobile from 'ismobilejs'
 
 Vue.use(Router)
@@ -38,6 +39,11 @@ const routes = [
     path: '/tasks',
     name: 'Tasks',
     component: adjustedComponent(Tasks)
+  },
+  {
+    path: '/tasks-category',
+    name: 'TasksCategory',
+    component: adjustedComponent(TasksCategory)
   }
 ]
 

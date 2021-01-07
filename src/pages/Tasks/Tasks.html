@@ -12,18 +12,21 @@
                     description="Выполнение этих заданий происходит на свежем воздухе"
                     img-path="street"
                     img-alt="Street tasks category image"
+                    @click.native="select(4)"
             />
             <task-category-card
                     title="Домашние"
                     description="Создатели этих задний ищут помощников по дому"
                     img-path="home"
                     img-alt="Home tasks category image"
+                    @click.native="select(2)"
             />
             <task-category-card
                     title="На работе"
                     description="Хотите побробовать себя в качестве подмастерья пекаря или парикмахера? Поищите в этих карточках"
                     img-path="work"
                     img-alt="Work tasks category image"
+                    @click.native="select(3)"
             />
         </v-main>
     </v-app>
