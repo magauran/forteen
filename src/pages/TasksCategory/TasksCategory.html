@@ -7,6 +7,11 @@
                 <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
             </v-app-bar>
             <h1>Задания на улице</h1>
+            <div v-for="(task) in tasks" v-bind:key="(task)">
+                <div class="task-card">
+                    <p>{{task.name}}</p>
+                </div>
+            </div>
         </v-main>
     </v-app>
 </div>
