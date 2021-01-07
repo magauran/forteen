@@ -1,0 +1,30 @@
+<div>
+    <v-app>
+        <v-main class="tasks">
+            <v-app-bar color="#fff" dense flat app>
+                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
+                <v-spacer></v-spacer>
+                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
+            </v-app-bar>
+            <h1>Задания</h1>
+            <task-category-card
+                    title="Уличные"
+                    description="Выполнение этих заданий происходит на свежем воздухе"
+                    img-path="street"
+                    img-alt="Street tasks category image"
+            />
+            <task-category-card
+                    title="Домашние"
+                    description="Создатели этих задний ищут помощников по дому"
+                    img-path="home"
+                    img-alt="Home tasks category image"
+            />
+            <task-category-card
+                    title="На работе"
+                    description="Хотите побробовать себя в качестве подмастерья пекаря или парикмахера? Поищите в этих карточках"
+                    img-path="work"
+                    img-alt="Work tasks category image"
+            />
+        </v-main>
+    </v-app>
+</div>
