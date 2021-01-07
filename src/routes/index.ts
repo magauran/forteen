@@ -3,15 +3,14 @@ import Router from 'vue-router'
 import Home from '../pages/Home/Home.vue'
 import Landing from '../pages/Landing.vue'
 import Login from '../pages/Login/Login.vue'
-import Register from '../components/Register.vue'
-import Dashboard from '../components/Dashboard.vue'
+import Registration from '../pages/Registration/Registration.vue'
 import isMobile from 'ismobilejs'
 
 Vue.use(Router)
 
 const isMobileDevice = isMobile(navigator).any
 
-function adjustedComponent (component: Vue.Component) {
+function adjustedComponent (component: Vue.Component): Vue.Component {
   return isMobileDevice ? component : Landing
 }
 
@@ -30,14 +29,14 @@ const routes = [
     component: adjustedComponent(Login)
   },
   {
-    path: '/register',
-    name: 'Register',
-    component: adjustedComponent(Register)
+    path: '/registration',
+    name: 'Registration',
+    component: adjustedComponent(Registration)
   },
   {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: adjustedComponent(Dashboard)
+    path: '/tasks',
+    name: 'Tasks',
+    component: adjustedComponent(Home) // TODO:
   }
 ]
 

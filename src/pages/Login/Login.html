@@ -24,10 +24,12 @@
                 />
 
                 <label for="register">Нет аккаунта?</label>
-                <input class="link-button"
+                <input id="register"
+                       class="link-button"
                        type="button"
                        value="Зарегистрироваться"
-                       id="register">
+                       @click="$router.push('registration')"
+                />
 
                 <button type="button" class="plain-button" id="login-button" v-on:click="submit">Войти</button>
             </form>

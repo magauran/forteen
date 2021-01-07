@@ -1,0 +1,91 @@
+<div>
+    <v-app>
+        <v-main class="registration">
+            <v-app-bar color="#fff" dense flat app>
+                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
+                <v-spacer></v-spacer>
+                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
+            </v-app-bar>
+            <h1>Регистрация</h1>
+            <h2>Шаг {{step}} из {{numberOfSteps}}</h2>
+            <div id="tab1" v-if="step === 1">
+                <form ref="form1">
+                    <label for="first_name">Имя</label>
+                    <input id="first_name"
+                           type="text"
+                           required
+                           placeholder="Иван"
+                           v-model="form.firstName"
+                    />
+
+                    <label for="second_name">Фамилия</label>
+                    <input id="second_name"
+                           type="text"
+                           required
+                           placeholder="Иванов"
+                           v-model="form.secondName"
+                    />
+
+                    <label for="email">Email</label>
+                    <input id="email"
+                           type="email"
+                           v-model="form.email"
+                    />
+
+                    <label for="password">Пароль</label>
+                    <input id="password"
+                           type="password"
+                           required
+                           minlength="6"
+                           v-model="form.password"
+                    />
+                    <label for="confirm_password">Подтвердите пароль</label>
+                    <input id="confirm_password"
+                           ref="confirmPassword"
+                           type="password"
+                           required
+                           minlength="6"
+                           onkeyup="this.setCustomValidity('');"
+                           v-model="form.confirmPassword"
+                    />
+                </form>
+            </div>
+            <div id="tab2" v-if="step === 2">
+                <form ref="form2">
+                    <label for="birthday">Дата рождения</label>
+                    <input id="birthday"
+                           type="date"
+                           required
+                           min="1900-01-01"
+                           max="2008-01-01"
+                           placeholder=""
+                           v-model="form.birthday"
+                    />
+
+                    <label for="passport">Паспорт (необязательно)</label>
+                    <input id="passport"
+                           type="file"
+                           accept=".jpg, .jpeg, .png"
+                    >
+                </form>
+            </div>
+            <div id="tab3" v-if="step === 3">
+                <form ref="form3">
+                    <label for="description">Расскажите о себе (необязательно)</label>
+                    <textarea id="description"
+                              maxlength="400"
+                              placeholder="Образование, увлечения и тд"
+                              v-model="form.description"
+                    ></textarea>
+
+                    <label for="photo">Прикрепите фото (необязательно)</label>
+                    <input id="photo"
+                           type="file"
+                           accept=".jpg, .jpeg, .png"
+                    >
+                </form>
+            </div>
+            <button id="submitButton" type="button" class="plain-button" v-on:click="submitForm">{{submitButtonTitle}}</button>
+        </v-main>
+    </v-app>
+</div>

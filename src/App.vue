@@ -29,12 +29,12 @@ export default class App extends Vue {}
 body {
   margin: 0;
   overflow: auto;
-  height: 100%;
+  height: 100% !important;
 }
 
 html {
   overflow: hidden;
-  height: 100%;
+  height: 100% !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
