@@ -4,7 +4,6 @@ import Home from '../pages/Home/Home.vue'
 import Landing from '../pages/Landing.vue'
 import Login from '../pages/Login/Login.vue'
 import Registration from '../pages/Registration/Registration.vue'
-import Dashboard from '../components/Dashboard.vue'
 import isMobile from 'ismobilejs'
 
 Vue.use(Router)
@@ -33,11 +32,6 @@ const routes = [
     path: '/registration',
     name: 'Registration',
     component: adjustedComponent(Registration)
-  },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: adjustedComponent(Dashboard)
   },
   {
     path: '/tasks',
