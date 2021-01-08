@@ -41,7 +41,7 @@ const routes = [
     component: adjustedComponent(Tasks)
   },
   {
-    path: '/tasks-category',
+    path: '/tasks-category/:taskType',
     name: 'TasksCategory',
     component: adjustedComponent(TasksCategory)
   }

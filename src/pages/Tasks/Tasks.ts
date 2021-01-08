@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import TaskCategoryCard from '../../components/TaskCategoryCard.vue'
+import { TaskType } from '../../pages/TasksCategory/TasksCategory'
 
 export default Vue.extend({
   components: {
@@ -10,8 +11,8 @@ export default Vue.extend({
     }
   },
   methods: {
-    select: function (type: number) {
-      this.$router.push({ name: 'TasksCategory' })
+    select: function (type: TaskType) {
+      this.$router.push({ name: 'TasksCategory', params: { taskType: (type as unknown as string) } })
     }
   }
 })
