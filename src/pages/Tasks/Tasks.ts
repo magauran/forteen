@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import TaskCategoryCard from '../../components/TaskCategoryCard.vue'
-import { TaskType } from '../../pages/TasksCategory/TasksCategory'
+import { TaskType } from '@/models/Task'
 
 export default Vue.extend({
   components: {
