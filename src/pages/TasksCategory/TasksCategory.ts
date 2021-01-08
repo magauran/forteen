@@ -1,15 +1,6 @@
 import Vue from 'vue'
-import * as rm from 'typed-rest-client/RestClient'
-import { Task, TaskInterface, TaskType } from '@/models/Task'
-
-interface TaskRecord {
-  id: string;
-  fields: Array<TaskInterface>;
-}
-
-interface TaskList {
-  records: Array<TaskRecord>;
-}
+import { Task, TaskType } from '@/models/Task'
+import { tasksService } from '@/services/TasksService'
 
 export default Vue.extend({
   components: {
@@ -25,25 +16,11 @@ export default Vue.extend({
 
     this.pageTitle = this.title(taskType)
 
-    this.fetchTasks(taskType).then(tasks => {
+    tasksService.fetchTasks(taskType).then(tasks => {
       this.tasks = tasks
     })
   },
   methods: {
-    fetchTasks: async (type: TaskType) => {
-      const rest: rm.RestClient = new rm.RestClient('rest', 'https://api.airtable.com/v0/appL06XW0QrDbpxxT/')
-      const response: rm.IRestResponse<TaskList> = await rest.get<TaskList>(`Tasks?api_key=keyUHl2tkCf4DEGqC&filterByFormula=%28%7Btype%7D%20%3D%20%27${type}%27%29`)
-      const abstractTasks: Array<TaskInterface> = response?.result?.records.flatMap(x => x.fields) ?? []
-      const tasks: Array<Task> = abstractTasks
-        .map(x => new Task(x))
-        .filter(x => {
-          return Object.entries(x)
-            .filter(([, v]) => {
-              return v !== null && v !== undefined
-            }).length === Object.entries(x).length
-        })
-      return tasks
-    },
     title: (type: TaskType) => {
       switch (type) {
         case TaskType.Home:
