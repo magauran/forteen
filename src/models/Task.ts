@@ -15,6 +15,7 @@ export interface TaskInterface {
   name: string;
   description: string;
   date: string;
+  price: number;
   attachments: Array<TaskAttachment>;
   image: string;
   dateDescription: string;
@@ -24,12 +25,14 @@ export class Task implements TaskInterface {
   name: string;
   description: string;
   date: string;
+  price: number;
   attachments: Array<TaskAttachment>;
 
   constructor (task: TaskInterface) {
     this.name = task.name
     this.description = task.description
     this.date = task.date
+    this.price = task.price
     this.attachments = task.attachments
   }
 
