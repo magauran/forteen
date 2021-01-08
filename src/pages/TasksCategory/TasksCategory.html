@@ -1,0 +1,46 @@
+<div>
+    <v-app>
+        <v-main class="tasks-category">
+            <v-app-bar color="#fff" dense flat app>
+                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
+                <v-spacer></v-spacer>
+                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
+            </v-app-bar>
+            <h1>{{this.pageTitle}}</h1>
+            <div v-for="(task) in tasks" v-bind:key="(task)">
+                <div class="task-card">
+                    <div id="card-header">
+                        <img id="image-decoration" src="@/assets/task_card-image_decoration.svg" alt="">
+                        <div id="profit">
+                            {{task.price}} TB
+                        </div>
+                        <button id="like">
+                            <img src="@/assets/heart_icon.svg">
+                        </button>
+                    </div>
+                    <img id="task-image" :src=task.image alt="Task image">
+                    <div id="card-details">
+                        <h2>{{task.name}}</h2>
+                        <hr/>
+                        <p id="card-description">{{task.description}}</p>
+                        <div id="card-details-footer">
+                            <div id="card-details-footer-left">
+                                <div class="card-details-footer-item">
+                                    <img class="card-detail-icon" src="@/assets/calendar_icon.svg" alt="Site logo">
+                                    <p>{{task.dateDescription}}</p>
+                                </div>
+                                <div class="card-details-footer-item">
+                                    <img class="card-detail-icon" src="@/assets/pin_icon.svg" alt="Site logo">
+                                    <p>{{task.address}}</p>
+                                </div>
+                            </div>
+                            <div id="card-details-footer-right">
+                                <button id="write-button">Написать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </v-main>
+    </v-app>
+</div>
