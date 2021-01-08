@@ -16,6 +16,7 @@ export interface TaskInterface {
   description: string;
   date: string;
   price: number;
+  address: string;
   attachments: Array<TaskAttachment>;
   image: string;
   dateDescription: string;
@@ -26,6 +27,7 @@ export class Task implements TaskInterface {
   description: string;
   date: string;
   price: number;
+  address: string;
   attachments: Array<TaskAttachment>;
 
   constructor (task: TaskInterface) {
@@ -33,6 +35,7 @@ export class Task implements TaskInterface {
     this.description = task.description
     this.date = task.date
     this.price = task.price
+    this.address = task.address
     this.attachments = task.attachments
   }
 
