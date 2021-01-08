@@ -12,8 +12,7 @@ export default Vue.extend({
     }
   },
   mounted () {
-    const taskType = this.$route.params.taskType as unknown as TaskType
-
+    const taskType: number = +this.$route.params.taskType as TaskType
     this.pageTitle = this.title(taskType)
 
     tasksService.fetchTasks(taskType).then(tasks => {
@@ -29,6 +28,8 @@ export default Vue.extend({
           return 'Задания на улице'
         case TaskType.Work:
           return 'Задания на работе'
+        default:
+          return 'Задания'
       }
     }
   }
