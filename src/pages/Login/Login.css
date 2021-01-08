@@ -1,22 +1,3 @@
-img.icon {
-    width: 87px;
-    height: 28px;
-}
-
-.link-button {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-
-    margin-right: 8px;
-}
-.link-button:focus {
-    outline: 0;
-}
-
 .plain-button {
     width: 100%;
     height: 36px;

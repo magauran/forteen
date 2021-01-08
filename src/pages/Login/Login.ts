@@ -1,9 +1,10 @@
 import firebase from 'firebase'
 import Vue from 'vue'
+import MobileAppContainer from '@/components/MobileAppContainer.vue'
 
 export default Vue.extend({
   components: {
-
+    MobileAppContainer
   },
   data () {
     return {

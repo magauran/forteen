@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import { Task, TaskType } from '@/models/Task'
 import { tasksService } from '@/services/TasksService'
+import MobileAppContainer from '@/components/MobileAppContainer.vue'
 
 export default Vue.extend({
   components: {
+    MobileAppContainer
   },
   data () {
     return {

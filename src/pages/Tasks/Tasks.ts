@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import TaskCategoryCard from '../../components/TaskCategoryCard.vue'
 import { TaskType } from '@/models/Task'
+import MobileAppContainer from '@/components/MobileAppContainer.vue'
 
 export default Vue.extend({
   components: {
-    TaskCategoryCard
+    TaskCategoryCard,
+    MobileAppContainer
   },
   data () {
     return {

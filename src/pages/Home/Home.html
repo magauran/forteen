@@ -1,19 +1,12 @@
 <div>
     <v-app>
-        <v-app-bar color="#fff" dense flat app>
-            <img class="icon" src="@/assets/logo.svg" alt="Site logo">
-            <v-spacer></v-spacer>
-            <button class="link-button" @click="$router.push('login')">Войти</button>
-            <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
-        </v-app-bar>
-        <menu-overlay :menus="links"></menu-overlay>
-        <v-content class="home">
+        <mobile-app-container>
             <h1>Подарки за задания!</h1>
             <img src="../../assets/home_img.svg" alt="Girl with gifts">
             <p>Тысячи людей ежедневно не успевают справится с домашней рутиной и забывают сделать небольшие дела. Помоги им! Выполняй их поручения за баллы и обменивай их на подарки в магазине сервиса.</p>
             <button class="plain-button">Начать</button>
             <h2>ForTeen в цифрах</h2>
             <landing-stats class="mobile-landing-stats"/>
-        </v-content>
+        </mobile-app-container>
     </v-app>
 </div>

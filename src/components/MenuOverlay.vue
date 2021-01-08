@@ -4,11 +4,11 @@
     <div class="side-menu-wrapper">
       <ul>
         <li v-for="(menu) in menus" v-bind:key="(menu)">
-          <a :href="menu.url" :target="menu.target" rel="nofollow">
+          <div @click="onTap(menu.path)">
             <i v-if="menu.material" class="material-icons">{{ menu.material }}</i>
             <i :class="menu.icon" v-else></i>
             {{ menu.title }}
-          </a>
+          </div>
         </li>
       </ul>
     </div>
@@ -37,15 +37,20 @@ export default {
       const slideBar = document.querySelector('.side-menu-wrapper')
       const overlay = document.querySelector('.side-menu-overlay')
       if (this.open) {
-        // alert('open')
         slideBar.style.right = '0'
         overlay.style.opacity = 1
         overlay.style.width = '100%'
       } else {
-        // alert('close')
         slideBar.style.right = '-100%'
         overlay.style.opacity = 0
         overlay.style.width = 0
+      }
+    },
+    onTap (path) {
+      if (this.$router.currentRoute.path === path) {
+        this.openMenu()
+      } else {
+        this.$router.push(path)
       }
     }
   },
@@ -75,7 +80,7 @@ export default {
   overflow-y: auto;
   width:100%;
 }
-.side-menu-wrapper > ul > li > a {
+.side-menu-wrapper > ul > li > div {
   display: block;
   transition: 0.3s;
   text-decoration: none;
