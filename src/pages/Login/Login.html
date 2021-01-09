@@ -1,11 +1,6 @@
 <div>
     <v-app>
-        <v-main class="login">
-            <v-app-bar color="#fff" dense flat app>
-                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
-                <v-spacer></v-spacer>
-                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
-            </v-app-bar>
+        <mobile-app-container>
             <img class="login-illustration" src="@/assets/login_img.svg" alt="Guy with the smartphone">
             <form class="login-container">
                 <label for="email">Email</label>
@@ -28,11 +23,11 @@
                        class="link-button"
                        type="button"
                        value="Зарегистрироваться"
-                       @click="$router.push('registration')"
+                       @click="$router.push('/registration')"
                 />
 
                 <button type="button" class="plain-button" id="login-button" v-on:click="submit">Войти</button>
             </form>
-        </v-main>
+        </mobile-app-container>
     </v-app>
 </div>

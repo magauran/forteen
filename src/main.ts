@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './routes/index'
 import * as firebase from 'firebase'
-import store from './store'
+import { store } from './store'
 import vuetify from './plugins/vuetify'
 import Clipboard from 'v-clipboard'
 

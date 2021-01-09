@@ -6,7 +6,9 @@ import Login from '../pages/Login/Login.vue'
 import Registration from '../pages/Registration/Registration.vue'
 import Tasks from '@/pages/Tasks/Tasks.vue'
 import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
+import Shop from '@/pages/Shop/Shop.vue'
 import isMobile from 'ismobilejs'
+import { store } from '@/store'
 
 Vue.use(Router)
 
@@ -44,6 +46,11 @@ const routes = [
     path: '/tasks-category/:taskType',
     name: 'TasksCategory',
     component: adjustedComponent(TasksCategory)
+  },
+  {
+    path: '/shop',
+    name: 'Shop',
+    component: adjustedComponent(Shop)
   }
 ]
 

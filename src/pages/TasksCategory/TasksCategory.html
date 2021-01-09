@@ -1,11 +1,6 @@
 <div>
     <v-app>
-        <v-main class="tasks-category">
-            <v-app-bar color="#fff" dense flat app>
-                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
-                <v-spacer></v-spacer>
-                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
-            </v-app-bar>
+        <mobile-app-container>
             <h1>{{this.pageTitle}}</h1>
             <div v-for="(task) in tasks" v-bind:key="(task)">
                 <div class="task-card">
@@ -41,6 +36,6 @@
                     </div>
                 </div>
             </div>
-        </v-main>
+        </mobile-app-container>
     </v-app>
 </div>

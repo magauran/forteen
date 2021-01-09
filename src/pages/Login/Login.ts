@@ -1,9 +1,10 @@
 import firebase from 'firebase'
 import Vue from 'vue'
+import MobileAppContainer from '@/components/MobileAppContainer.vue'
 
 export default Vue.extend({
   components: {
-
+    MobileAppContainer
   },
   data () {
     return {
@@ -19,7 +20,8 @@ export default Vue.extend({
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(() => {
-          this.$router.replace({ name: 'Dashboard' })
+          this.$store.state.user.loggedIn = true
+          this.$router.replace({ name: 'Tasks' })
         })
         .catch(err => {
           alert(err)

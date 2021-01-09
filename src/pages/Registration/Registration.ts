@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import firebase from 'firebase'
 // import { KEYBOARD_DID_CLOSE, KEYBOARD_DID_OPEN, startKeyboardAssist } from '@/utils/Keyboard'
+import MobileAppContainer from '@/components/MobileAppContainer.vue'
 
 export default Vue.extend({
   components: {
-
+    MobileAppContainer
   },
   data () {
     return {

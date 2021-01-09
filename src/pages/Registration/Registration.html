@@ -1,11 +1,6 @@
 <div>
     <v-app>
-        <v-main class="registration">
-            <v-app-bar color="#fff" dense flat app>
-                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
-                <v-spacer></v-spacer>
-                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
-            </v-app-bar>
+        <mobile-app-container>
             <h1>Регистрация</h1>
             <h2>Шаг {{step}} из {{numberOfSteps}}</h2>
             <div id="tab1" v-if="step === 1">
@@ -86,6 +81,6 @@
                 </form>
             </div>
             <button id="submitButton" type="button" class="plain-button" v-on:click="submitForm">{{submitButtonTitle}}</button>
-        </v-main>
+        </mobile-app-container>
     </v-app>
 </div>

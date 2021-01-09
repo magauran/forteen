@@ -1,11 +1,6 @@
 <div>
     <v-app>
-        <v-main class="tasks">
-            <v-app-bar color="#fff" dense flat app>
-                <img class="icon" src="@/assets/logo.svg" alt="Site logo">
-                <v-spacer></v-spacer>
-                <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
-            </v-app-bar>
+        <mobile-app-container>
             <h1>Задания</h1>
             <task-category-card
                     title="Уличные"
@@ -28,6 +23,6 @@
                     img-alt="Work tasks category image"
                     @click.native="select(3)"
             />
-        </v-main>
+        </mobile-app-container>
     </v-app>
 </div>
