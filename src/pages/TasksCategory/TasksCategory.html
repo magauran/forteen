@@ -2,7 +2,8 @@
     <v-app>
         <mobile-app-container>
             <h1>{{this.pageTitle}}</h1>
-            <div v-for="(task) in tasks" v-bind:key="(task)">
+            <!--TODO: replace key to task.id-->
+            <div v-for="(task) in tasks" v-bind:key="(task.name)">
                 <div class="task-card">
                     <div id="card-header">
                         <img id="image-decoration" src="@/assets/task_card-image_decoration.svg" alt="">

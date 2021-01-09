@@ -6,7 +6,7 @@
                 <span>Ваш баланс:</span>
                 <span id="balance-value">100000 TC</span>
             </p>
-            <div v-for="(gift) in gifts" v-bind:key="(gift)">
+            <div v-for="(gift) in gifts" v-bind:key="(gift.id)">
                 <div class="gift-card" @click="openGift(`${gift.id}`)">
                     <div id="gift-image-container">
                         <img id="gift-image" :src=gift.image alt="Gift image">
