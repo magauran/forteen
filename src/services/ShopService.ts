@@ -1,13 +1,18 @@
 import { Gift, GiftInterface } from '@/models/Gift'
 import * as rm from 'typed-rest-client'
 
-interface GiftRecord {
+interface GiftsRecord {
   id: string;
   fields: Array<GiftInterface>;
 }
 
+interface GiftRecord {
+  id: string;
+  fields: GiftInterface;
+}
+
 export interface GiftList {
-  records: Array<GiftRecord>;
+  records: Array<GiftsRecord>;
 }
 
 const baseURL = 'https://api.airtable.com/v0/appL06XW0QrDbpxxT/'
@@ -27,6 +32,13 @@ class ShopService {
           }).length === Object.entries(x).length
       })
     return gifts
+  }
+
+  async fetchGift (id: string) {
+    const rest: rm.RestClient = new rm.RestClient('rest', baseURL)
+    const response: rm.IRestResponse<GiftRecord> = await rest.get<GiftRecord>(`Items/${id}?api_key=${apiKey}`)
+    const abstractGift = response?.result?.fields as GiftInterface
+    return new Gift(abstractGift)
   }
 }
 
