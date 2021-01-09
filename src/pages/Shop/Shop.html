@@ -2,6 +2,21 @@
     <v-app>
         <mobile-app-container>
             <h1>Магазин</h1>
+            <div v-for="(gift) in gifts" v-bind:key="(gift)">
+                <div class="gift-card">
+                    <div id="gift-image-container">
+                        <img id="gift-image" :src=gift.image alt="Gift image">
+                    </div>
+                    <div id="gift-details">
+                        <h2 id="card-title">{{gift.name}}</h2>
+                        <p id="card-description">{{gift.description}}</p>
+                        <div id="card-details-footer">
+                            <p id="gift-price">{{gift.price}} TC</p>
+                            <button id="buy-button">Обменять</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </mobile-app-container>
     </v-app>
 </div>

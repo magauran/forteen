@@ -1,1 +1,91 @@
 @import "../../styles/styles.mobile.scss";
+
+.gift-card {
+  box-shadow: 0 2px 4px rgba(117, 131, 142, 0.04), 0 8px 16px rgba(52, 60, 68, 0.1);
+  border-radius: 16px;
+  margin-top: 16px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 16px 10px 10px;
+  align-items: center;
+}
+
+#gift-image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+img#gift-image {
+  height: 90px;
+  width: 90px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+#gift-details {
+  padding-left: 12px;
+  flex-grow: 1;
+}
+
+h2#card-title {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: left;
+  color: #000000;
+}
+
+#card-description {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  text-align: left;
+  color: #AAAAAA;
+  margin-top: 4px;
+}
+
+#card-details-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+p#gift-price {
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  color: #7480FF;
+  margin: 0;
+}
+
+#buy-button {
+  display: block;
+  background: #7480FF;
+  border-radius: 4px;
+  padding: 0 10px;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #F2F2F2;
+  height: 28px;
+}
+#buy-button:active {
+  background-color: #3A43B7;
+}
+#buy-button:focus {
+  outline: 0;
+}
