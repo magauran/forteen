@@ -18,5 +18,8 @@ export default Vue.extend({
     })
   },
   methods: {
+    openGift (giftID: string) {
+      this.$router.push('/shop/gift/' + giftID)
+    }
   }
 })

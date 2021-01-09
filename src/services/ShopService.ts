@@ -22,23 +22,23 @@ class ShopService {
   async fetchGifts () {
     const rest: rm.RestClient = new rm.RestClient('rest', baseURL)
     const response: rm.IRestResponse<GiftList> = await rest.get<GiftList>(`Items?api_key=${apiKey}`)
-    const abstractGifts: Array<GiftInterface> = response?.result?.records.flatMap(x => x.fields) ?? []
-    const gifts: Array<Gift> = abstractGifts
-      .map(x => new Gift(x))
+    const records = (response?.result?.records ?? []) as unknown as GiftRecord[]
+    return records
+      .flatMap(x => new Gift(x.id, x.fields))
       .filter(x => {
         return Object.entries(x)
           .filter(([, v]) => {
             return v !== null && v !== undefined
           }).length === Object.entries(x).length
       })
-    return gifts
   }
 
   async fetchGift (id: string) {
     const rest: rm.RestClient = new rm.RestClient('rest', baseURL)
     const response: rm.IRestResponse<GiftRecord> = await rest.get<GiftRecord>(`Items/${id}?api_key=${apiKey}`)
-    const abstractGift = response?.result?.fields as GiftInterface
-    return new Gift(abstractGift)
+    const record = response?.result as GiftRecord
+    const abstractGift = record.fields as GiftInterface
+    return new Gift(record.id, abstractGift)
   }
 }
 

@@ -8,7 +8,7 @@
                         Обменять <span id="gift-price">{{this.gift.price}} TC</span> на{{'\xa0'}}{{this.gift.name.replace('&nbsp;', '\xa0')}}
                     </p>
                     <button id="buy-button">Обменять</button>
-                    <button id="cancel-button">Отменить</button>
+                    <button id="cancel-button" @click="cancel">Отменить</button>
                 </div>
                 <p id="gift-hint">На вашу почту придет письмо с инструкцией по получению вознаграждения</p>
             </div>

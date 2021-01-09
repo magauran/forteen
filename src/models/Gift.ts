@@ -12,12 +12,14 @@ export interface GiftInterface {
 }
 
 export class Gift implements GiftInterface {
+  id: string;
   name: string;
   description: string;
   price: number;
   photo: Array<GiftAttachment>;
 
-  constructor (gift: GiftInterface) {
+  constructor (id: string, gift: GiftInterface) {
+    this.id = id
     this.name = gift.name
     this.description = gift.description
     this.price = gift.price

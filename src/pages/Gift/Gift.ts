@@ -21,5 +21,8 @@ export default Vue.extend({
     })
   },
   methods: {
+    cancel () {
+      this.$router.back()
+    }
   }
 })
