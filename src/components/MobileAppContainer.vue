@@ -30,7 +30,7 @@ export default {
       menuVisible: false,
       links: [
         { title: 'Главная', path: '/' },
-        { title: 'Профиль', path: '/' },
+        { title: 'Профиль', path: '/profile' },
         { title: 'Задания', path: '/tasks' },
         { title: 'Магазин', path: '/shop' }
       ],

@@ -8,6 +8,7 @@ import Tasks from '@/pages/Tasks/Tasks.vue'
 import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
 import Shop from '@/pages/Shop/Shop.vue'
 import Gift from '@/pages/Gift/Gift.vue'
+import Profile from '@/pages/Profile/Profile.vue'
 import isMobile from 'ismobilejs'
 import { store } from '@/store'
 
@@ -57,6 +58,16 @@ const routes = [
     path: '/shop/gift/:giftID',
     name: 'Gift',
     component: adjustedComponent(Gift)
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: adjustedComponent(Profile)
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'Not found',
+    component: adjustedComponent(Profile) // TODO:
   }
 ]
 
