@@ -4,5 +4,5 @@
 <script lang="ts" src="./Shop.ts">
 </script>
 
-<style lang="css" scoped src="./Shop.css">
+<style lang="scss" scoped src="./Shop.scss">
 </style>
