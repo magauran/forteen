@@ -3,7 +3,7 @@
     <v-app-bar color="#fff" dense flat app>
       <img class="icon" src="@/assets/logo.svg" alt="Site logo">
       <v-spacer></v-spacer>
-      <button class="link-button" @click="$router.push('/login')">Войти</button>
+      <button v-if="!this.loginButtonVisible" class="link-button" @click="$router.push('/login')">Войти</button>
       <v-app-bar-nav-icon v-on:click="openMenu"></v-app-bar-nav-icon>
     </v-app-bar>
     <menu-overlay :menus="links"></menu-overlay>
@@ -34,8 +34,12 @@ export default {
         { title: 'Задания', path: '/tasks' },
         { title: 'Магазин', path: '/shop' }
       ],
-      bus: new Vue()
+      bus: new Vue(),
+      loginButtonVisible: false
     }
+  },
+  mounted () {
+    this.loginButtonVisible = !this.$store.state.user.loggedIn
   },
   methods: {
     openMenu () {

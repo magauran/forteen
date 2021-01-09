@@ -8,6 +8,7 @@ import Tasks from '@/pages/Tasks/Tasks.vue'
 import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
 import Shop from '@/pages/Shop/Shop.vue'
 import isMobile from 'ismobilejs'
+import { store } from '@/store'
 
 Vue.use(Router)
 

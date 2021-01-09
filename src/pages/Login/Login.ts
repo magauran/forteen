@@ -20,7 +20,8 @@ export default Vue.extend({
         .auth()
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(() => {
-          this.$router.replace({ name: 'Dashboard' })
+          this.$store.state.user.loggedIn = true
+          this.$router.replace({ name: 'Tasks' })
         })
         .catch(err => {
           alert(err)
