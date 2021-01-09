@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "firebase": "7.20.0",
     "ismobilejs": "^1.1.1",
+    "md5": "^2.3.0",
     "odometer": "^0.4.8",
     "serve-static": "^1.14.1",
     "ts-date": "^3.0.2",

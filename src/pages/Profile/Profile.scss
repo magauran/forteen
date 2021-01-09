@@ -1,0 +1,90 @@
+@import "../../styles/styles.mobile.scss";
+
+#header-wrapper {
+  margin-top: 32px;
+  padding-bottom: 50px;
+}
+
+#profile-header {
+  position: relative;
+  display: block;
+  height: 120px;
+  background: linear-gradient(135deg, #49C0B8 0%, #7480FF 100%);
+  border-radius: 16px;
+}
+
+#user-photo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  overflow: hidden;
+  object-fit: cover;
+  margin-top: -50px;
+  top: 100%;
+  left: 50%;
+  background-color: lightgrey;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+}
+
+img#image-decoration {
+  position: absolute;
+  width: 152px;
+  height: 60px;
+  top: 61px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+}
+
+#profile-menu {
+  margin-top: 36px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-menu-item {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.profile-menu-item>p {
+  margin: 0 0 0 30px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #343C44;
+}
+
+.divider {
+  display: block;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #D6E4EC;
+  padding: 0;
+}
+
+#username {
+  margin-top: 11px;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #4F4F4F;
+}
