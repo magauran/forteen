@@ -1,7 +1,26 @@
 <div>
     <v-app>
         <mobile-app-container>
-            Hello!
+            <h1>Магазин</h1>
+            <p id="balance">
+                <span>Ваш баланс:</span>
+                <span id="balance-value">100000 TC</span>
+            </p>
+            <div v-for="(gift) in gifts" v-bind:key="(gift.id)">
+                <div class="gift-card" @click="openGift(`${gift.id}`)">
+                    <div id="gift-image-container">
+                        <img id="gift-image" :src=gift.image alt="Gift image">
+                    </div>
+                    <div id="gift-details">
+                        <h2 id="card-title">{{gift.name}}</h2>
+                        <p id="card-description">{{gift.description}}</p>
+                        <div id="card-details-footer">
+                            <p id="gift-price">{{gift.price}} TC</p>
+                            <button id="buy-button">Обменять</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </mobile-app-container>
     </v-app>
 </div>

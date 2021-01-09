@@ -7,6 +7,7 @@ import Registration from '../pages/Registration/Registration.vue'
 import Tasks from '@/pages/Tasks/Tasks.vue'
 import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
 import Shop from '@/pages/Shop/Shop.vue'
+import Gift from '@/pages/Gift/Gift.vue'
 import isMobile from 'ismobilejs'
 import { store } from '@/store'
 
@@ -51,6 +52,11 @@ const routes = [
     path: '/shop',
     name: 'Shop',
     component: adjustedComponent(Shop)
+  },
+  {
+    path: '/shop/gift/:giftID',
+    name: 'Gift',
+    component: adjustedComponent(Gift)
   }
 ]
 

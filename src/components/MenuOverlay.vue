@@ -3,7 +3,7 @@
     <div class="side-menu-overlay" style="width: 0; opacity: 0;" @click.prevent="openMenu"></div>
     <div class="side-menu-wrapper">
       <ul>
-        <li v-for="(menu) in menus" v-bind:key="(menu)">
+        <li v-for="(menu) in menus" v-bind:key="(menu.title)">
           <div @click="onTap(menu.path)">
             <i v-if="menu.material" class="material-icons">{{ menu.material }}</i>
             <i :class="menu.icon" v-else></i>

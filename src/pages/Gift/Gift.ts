@@ -7,19 +7,22 @@ export default Vue.extend({
   components: {
     MobileAppContainer
   },
-  data () {
+  data (): {
+    gift: Gift | null;
+    } {
     return {
-      gifts: new Array<Gift>()
+      gift: null
     }
   },
   mounted () {
-    shopService.fetchGifts().then(gifts => {
-      this.gifts = gifts
+    const giftID: string = this.$route.params.giftID
+    shopService.fetchGift(giftID).then(gift => {
+      this.gift = gift
     })
   },
   methods: {
-    openGift (giftID: string) {
-      this.$router.push('/shop/gift/' + giftID)
+    cancel () {
+      this.$router.back()
     }
   }
 })

@@ -17,7 +17,7 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class App extends Vue {}
 </script>
 
-<style>
+<style lang="scss">
 /*noinspection CssUnknownTarget*/
 @import url('https://fonts.googleapis.com/css2?family=Cousine:wght@700&family=Montserrat:wght@400;700&display=swap');
 #app {

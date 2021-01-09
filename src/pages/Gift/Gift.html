@@ -1,0 +1,17 @@
+<div>
+    <v-app>
+        <mobile-app-container>
+            <div id="page-container">
+                <div id="gift-container">
+                    <img id="gift-image" :src=this.gift.image alt="Gift image">
+                    <p id="gift-description">
+                        Обменять <span id="gift-price">{{this.gift.price}} TC</span> на{{'\xa0'}}{{this.gift.name.replace('&nbsp;', '\xa0')}}
+                    </p>
+                    <button id="buy-button">Обменять</button>
+                    <button id="cancel-button" @click="cancel">Отменить</button>
+                </div>
+                <p id="gift-hint">На вашу почту придет письмо с инструкцией по получению вознаграждения</p>
+            </div>
+        </mobile-app-container>
+    </v-app>
+</div>
