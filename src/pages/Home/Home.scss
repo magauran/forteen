@@ -5,7 +5,7 @@ h1 {
     font-size: 34px;
     line-height: 41px;
     text-align: left;
-    color: #7480FF;
+    color: $ft-text-accent1;
 }
 
 p {
@@ -14,7 +14,7 @@ p {
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
-    color: #000000;
+    color: $ft-text-primary;
     text-align: left;
     margin-bottom: 36px;
 }
@@ -23,13 +23,13 @@ dl.landing-stats {
     flex-direction: column;
 }
 
-.mobile-landing-stats >>> dt {
+#mobile-landing-stats ::v-deep dt {
     font-size: 16px;
     line-height: 18px;
     margin-bottom: 32px;
 }
 
-.mobile-landing-stats >>> .iOdometer {
+#mobile-landing-stats ::v-deep .iOdometer {
     font-size: 34px;
     line-height: 41px;
 }
@@ -37,7 +37,7 @@ dl.landing-stats {
 .plain-button {
     width: 100%;
     height: 36px;
-    background-color: #7480FF;
+    background-color: $ft-primary-button;
     box-shadow: 0 0 1px rgba(117, 131, 142, 0.04), 0 2px 4px rgba(52, 60, 68, 0.16);
     border-radius: 8px;
     border: none;
@@ -49,17 +49,17 @@ dl.landing-stats {
     color: #FBFBFB;
 }
 .plain-button:hover {
-    background-color: #545FDB;
+    background-color: $ft-primary-button-hover;
 }
 .plain-button:active {
-    background-color: #3A43B7;
+    background-color: $ft-primary-button-active;
 }
 .plain-button:focus {
     outline: 0;
 }
 
 h2 {
-    margin-top: 72px;
+    margin-top: 60px;
     margin-bottom: 32px;
     font-family: Montserrat, sans-serif;
     font-style: normal;
@@ -67,5 +67,5 @@ h2 {
     font-size: 24px;
     line-height: 29px;
     text-align: center;
-    color: #7480FF;
+    color: $ft-text-accent1;
 }
