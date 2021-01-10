@@ -9,6 +9,7 @@ import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
 import Shop from '@/pages/Shop/Shop.vue'
 import Gift from '@/pages/Gift/Gift.vue'
 import Profile from '@/pages/Profile/Profile.vue'
+import NotFound from '@/pages/NotFound/NotFound.vue'
 import isMobile from 'ismobilejs'
 import { store } from '@/store'
 
@@ -72,7 +73,7 @@ const routes = [
   {
     path: '/:pathMatch(.*)*',
     name: 'Not found',
-    component: adjustedComponent(Profile) // TODO:
+    component: adjustedComponent(NotFound)
   }
 ]
 
