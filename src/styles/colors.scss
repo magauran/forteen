@@ -1,0 +1,46 @@
+// Background
+$ft-background: $_ft-white;
+$ft-surface1: $_ft-gray96;
+$ft-surface2: $_ft-gray51;
+
+// Buttons
+$ft-primary-button: $_ft-blue;
+$ft-primary-button-hover: $_ft-blue-dark;
+$ft-primary-button-active: $_ft-blue-very-dark;
+$ft-primary-button-title: $_ft-gray96;
+
+$ft-negative-link: $_ft-red;
+$ft-negative-link-active: $_ft-red-dark;
+
+$ft-round-button: $_ft-gray96;
+$ft-round-button-active: $_ft-gray76;
+
+// Text
+$ft-text-primary: $_ft-black;
+$ft-text-secondary: $_ft-gray27;
+$ft-text-tertiary: $_ft-gray67;
+$ft-text-accent1: $_ft-blue;
+$ft-text-accent2: $_ft-green;
+$ft-text-light: $_ft-white; // White text on dark surfaces.
+
+// Link
+$ft-link-light: $_ft-white;
+$ft-link-light-hover: $_ft-green;
+
+$ft-link: $_ft-green;
+$ft-link-active: $_ft-green-dark;
+
+// Input
+$ft-input-background: $_ft-gray96;
+$ft-input-border: $_ft-light-blue;
+$ft-input-border-focus: $_ft-blue;
+
+// Gradient
+$ft-app-gradient: linear-gradient(135deg, $_ft-green 0%, $_ft-blue 100%);
+
+// Separator
+$ft-list-separator: $_ft-light-blue;
+$ft-card-separator: $_ft-gray76;
+
+// Dimming
+$ft-dimming-slideover: rgba(0,0,0,.3);

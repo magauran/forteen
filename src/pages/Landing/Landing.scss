@@ -1,0 +1,203 @@
+.landing-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $ft-background;
+}
+.landing-header-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  max-width: 1280px;
+  margin-top: 32px;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+.landing-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 48px;
+  max-width: 1280px;
+}
+.landing-logo {
+  display: flex;
+  align-items: center;
+}
+.landing-social-buttons {
+  display: flex;
+  align-items: center;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+}
+.landing-social-buttons button:not(:first-of-type) {
+  margin-left: 20px;
+}
+.section-content {
+  max-width: 1280px;
+  min-width: 560px;
+  height: 100%;
+  display: flex;
+}
+.first-section {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.first-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+.first-section-img {
+  display: flex;
+  flex-basis: 300px;
+  margin-bottom: 50px;
+}
+.first-section-text {
+  display: flex;
+  flex-basis: 560px;
+  flex-direction: column;
+}
+.second-section {
+  min-height: 720px;
+  background-color: $ft-surface1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.second-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.second-section-img {
+  flex-basis: 686px;
+  position: relative;
+}
+.second-section-img>button {
+  display: inline-block;
+  position: absolute;
+  bottom: 80px;
+  left: 240px;
+  width: 120px;
+  height: 32px;
+  background-color: $ft-primary-button;
+  box-shadow: 0 0 1px rgba(117, 131, 142, 0.04), 0 2px 4px rgba(52, 60, 68, 0.16);
+  border-radius: 8px;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: $ft-primary-button-title;
+}
+.second-section-img>button:hover {
+  background-color: $ft-primary-button-hover;
+}
+.second-section-img>button:active {
+  background-color: $ft-primary-button-active;
+}
+.second-section-img>button:focus {
+  outline: 0;
+}
+.second-section-text {
+  display: flex;
+  flex-basis: 550px;
+  flex-direction: column;
+}
+.third-section {
+  height: 520px;
+  display: flex;
+  justify-content: center;
+}
+.third-section-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 100px;
+  text-align: left;
+  color: $ft-text-accent1;
+  margin-bottom: 40px;
+}
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 73px;
+  text-align: left;
+  color: $ft-text-accent1;
+  margin-bottom: 11px;
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: left;
+  color: $ft-text-primary;
+}
+.landing-company-info {
+  margin-bottom: 42px;
+}
+.landing-company-info>p {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: left;
+  color: $ft-text-light;
+}
+.landing-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 280px;
+  background-color: $ft-surface2;
+}
+.landing-footer-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  max-width: 1280px;
+  margin-left: 32px;
+  margin-right: 32px;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+  color: $ft-link-light;
+}
+a:hover {
+  color: $ft-link-light-hover;
+  text-decoration: none;
+}
+.landing-content {
+  background-color: white;
+  min-height: calc(100vh - 350px);
+}
+.third-section-content>h2 {
+  margin-bottom: 32px;
+}

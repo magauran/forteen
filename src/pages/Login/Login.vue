@@ -4,5 +4,5 @@
 <script lang="ts" src="./Login.ts">
 </script>
 
-<style lang="css" scoped src="./Login.css">
+<style lang="scss" scoped src="./Login.scss">
 </style>

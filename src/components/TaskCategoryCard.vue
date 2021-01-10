@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .container {
     display: flex;
     height: 176px;
@@ -38,7 +38,7 @@ export default {
     flex-grow: 0;
   }
   #right-container {
-    background-color: #FBFBFB;
+    background-color: $ft-background;
     flex-grow: 1;
     padding: 16px 8px 16px 12px;
   }
@@ -49,7 +49,7 @@ export default {
     font-weight: normal;
     font-size: 20px;
     line-height: 120%;
-    color: #49C0B8;
+    color: $ft-text-accent2;
     margin-bottom: 4px;
   }
   p {
@@ -59,7 +59,7 @@ export default {
     font-weight: normal;
     font-size: 13px;
     line-height: 160%;
-    color: #175D6F;
+    color: $ft-text-secondary;
   }
   @media (max-width: 320px) {
    p {

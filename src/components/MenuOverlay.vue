@@ -60,11 +60,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .side-menu-wrapper {
   display: flex;
   overflow: hidden;
-  background: white;
+  background: $ft-background;
   position: fixed;
   right: -100%;
   height: 100%;
@@ -90,7 +90,7 @@ export default {
   font-size: 20px;
   line-height: 120%;
   text-align: center;
-  color: #7480FF;
+  color: $ft-text-accent1;
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -101,7 +101,7 @@ export default {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.3);
+  background-color: $ft-dimming-slideover;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: center;
