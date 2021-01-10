@@ -39,7 +39,7 @@ export default {
     }
   },
   mounted () {
-    this.loginButtonVisible = !this.$store.state.user.loggedIn
+    this.loginButtonVisible = !this.$store.state.user.loggedIn && !this.$route.meta.forceHideLoginButton
   },
   methods: {
     openMenu () {

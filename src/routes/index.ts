@@ -9,6 +9,7 @@ import TasksCategory from '@/pages/TasksCategory/TasksCategory.vue'
 import Shop from '@/pages/Shop/Shop.vue'
 import Gift from '@/pages/Gift/Gift.vue'
 import Profile from '@/pages/Profile/Profile.vue'
+import NotFound from '@/pages/NotFound/NotFound.vue'
 import isMobile from 'ismobilejs'
 import { store } from '@/store'
 
@@ -32,12 +33,14 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: adjustedComponent(Login)
+    component: adjustedComponent(Login),
+    meta: { forceHideLoginButton: true }
   },
   {
     path: '/registration',
     name: 'Registration',
-    component: adjustedComponent(Registration)
+    component: adjustedComponent(Registration),
+    meta: { forceHideLoginButton: true }
   },
   {
     path: '/tasks',
@@ -52,22 +55,25 @@ const routes = [
   {
     path: '/shop',
     name: 'Shop',
-    component: adjustedComponent(Shop)
+    component: adjustedComponent(Shop),
+    meta: { requiresAuth: true }
   },
   {
     path: '/shop/gift/:giftID',
     name: 'Gift',
-    component: adjustedComponent(Gift)
+    component: adjustedComponent(Gift),
+    meta: { requiresAuth: true }
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: adjustedComponent(Profile)
+    component: adjustedComponent(Profile),
+    meta: { requiresAuth: true }
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'Not found',
-    component: adjustedComponent(Profile) // TODO:
+    component: adjustedComponent(NotFound)
   }
 ]
 
@@ -79,7 +85,19 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title ?? 'ForTeen'
-  next()
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.state.user.loggedIn) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router

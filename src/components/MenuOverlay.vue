@@ -51,6 +51,8 @@ export default {
         this.openMenu()
       } else {
         this.$router.push(path)
+        // Always close the menu even if the paths aren't equal because the destination path can redirect to the source path.
+        this.openMenu()
       }
     }
   },
