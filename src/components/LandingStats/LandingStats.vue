@@ -81,9 +81,9 @@ export default {
     color: #4F4F4F;
   }
   .iOdometer {
-    font-family: 'Cousine', monospace;
+    font-family: Cousine, monospace;
     font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 60px;
     line-height: 73px;
     display: flex;

@@ -18,10 +18,8 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-/*noinspection CssUnknownTarget*/
-@import url('https://fonts.googleapis.com/css2?family=Cousine:wght@700&family=Montserrat:wght@400;700&display=swap');
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

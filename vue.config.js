@@ -11,6 +11,7 @@ module.exports = {
         prependData: `
            @import "@/styles/palette.scss";
            @import "@/styles/colors.scss";
+           @import "@/styles/fonts.scss";
         `
       }
     }

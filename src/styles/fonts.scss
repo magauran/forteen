@@ -1,0 +1,28 @@
+/* montserrat-regular - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+  src: url('~@/assets/fonts/montserrat-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('~@/assets/fonts/montserrat-regular.woff') format('woff'), /* Modern Browsers */
+       url('~@/assets/fonts/montserrat-regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+/* montserrat-700 - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  src: url('~@/assets/fonts/montserrat-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('~@/assets/fonts/montserrat-bold.woff') format('woff'), /* Modern Browsers */
+       url('~@/assets/fonts/montserrat-bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+/* cousine-700 - latin_cyrillic-ext_cyrillic */
+@font-face {
+  font-family: 'Cousine';
+  font-style: normal;
+  font-weight: bold;
+  src: url('~@/assets/fonts/cousine-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('~@/assets/fonts/cousine-bold.woff') format('woff'), /* Modern Browsers */
+       url('~@/assets/fonts/cousine-bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
