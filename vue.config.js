@@ -10,6 +10,7 @@ module.exports = {
       sass: {
         prependData: `
            @import "@/styles/palette.scss";
+           @import "@/styles/colors.scss";
         `
       }
     }
