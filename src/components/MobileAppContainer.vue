@@ -49,7 +49,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 img.icon {
   width: 87px;
   height: 28px;
@@ -61,7 +61,7 @@ img.icon {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #000000;
+  color: $ft-text-primary;
 
   margin-right: 8px;
 }
