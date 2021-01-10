@@ -19,12 +19,14 @@ export default Vue.extend({
   },
   data () {
     return {
-      user: null as UserData | null
+      user: null as UserData | null,
+      isLoaded: false
     }
   },
   mounted () {
     userService.fetch().then((user) => {
       this.user = user
+      this.isLoaded = true
     })
   },
   methods: {

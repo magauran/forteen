@@ -64,7 +64,7 @@
                     </li>
                 </ul>
             </div>
-            <div v-else id="error-block">
+            <div v-else-if="this.isLoaded" id="error-block">
                 Не удалось загрузить профиль 😢
                 <div id="logout-error" @click="logout">
                     Выйти
