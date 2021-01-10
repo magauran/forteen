@@ -52,17 +52,20 @@ const routes = [
   {
     path: '/shop',
     name: 'Shop',
-    component: adjustedComponent(Shop)
+    component: adjustedComponent(Shop),
+    meta: { requiresAuth: true }
   },
   {
     path: '/shop/gift/:giftID',
     name: 'Gift',
-    component: adjustedComponent(Gift)
+    component: adjustedComponent(Gift),
+    meta: { requiresAuth: true }
   },
   {
     path: '/profile',
     name: 'Profile',
-    component: adjustedComponent(Profile)
+    component: adjustedComponent(Profile),
+    meta: { requiresAuth: true }
   },
   {
     path: '/:pathMatch(.*)*',
@@ -79,7 +82,19 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title ?? 'ForTeen'
-  next()
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.state.user.loggedIn) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
 
 export default router
