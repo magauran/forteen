@@ -14,7 +14,7 @@ $ft-negative-link-active: $_ft-red-dark;
 
 // Text
 $ft-text-primary: $_ft-black;
-$ft-text-secondary: $_ft-gray20;
+$ft-text-secondary: $_ft-gray27;
 $ft-text-tertiary: $_ft-gray67;
 $ft-text-accent1: $_ft-blue;
 $ft-text-accent2: $_ft-green;
@@ -28,7 +28,12 @@ $ft-link: $_ft-green;
 $ft-link-active: $_ft-green-dark;
 
 // Input
-
 $ft-input-background: $_ft-gray96;
 $ft-input-border: $_ft-light-blue;
 $ft-input-border-focus: $_ft-blue;
+
+// Gradient
+$ft-app-gradient: linear-gradient(135deg, $_ft-green 0%, $_ft-blue 100%);
+
+// Separator
+$ft-list-separator: $_ft-light-blue;
