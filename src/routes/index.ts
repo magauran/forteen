@@ -32,12 +32,14 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: adjustedComponent(Login)
+    component: adjustedComponent(Login),
+    meta: { forceHideLoginButton: true }
   },
   {
     path: '/registration',
     name: 'Registration',
-    component: adjustedComponent(Registration)
+    component: adjustedComponent(Registration),
+    meta: { forceHideLoginButton: true }
   },
   {
     path: '/tasks',
