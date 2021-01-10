@@ -147,7 +147,7 @@ export default {
       snackbar: false,
       snackbarTimeout: 2000,
       snackbarText: 'Ссылка на сайт скопирована',
-      clipboardItem: 'ForTeen.ru'
+      clipboardItem: 'https://www.forteen.ru'
     }
   },
   mounted () {
