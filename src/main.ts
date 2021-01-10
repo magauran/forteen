@@ -29,6 +29,9 @@ firebase.auth().onAuthStateChanged(user => {
   store.dispatch('fetchUser', user)
 })
 
+const databaseRef = firebase.database().ref()
+export const usersDatabase = databaseRef.child('users')
+
 new Vue({
   router,
   store,

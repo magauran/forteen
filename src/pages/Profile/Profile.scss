@@ -42,6 +42,7 @@ img#image-decoration {
 
 #profile-menu {
   margin-top: 36px;
+  margin-bottom: 32px;
   list-style-type: none;
   padding: 0;
 }
@@ -119,4 +120,28 @@ hr {
   color: #E25822;
   padding: 6px 10px;
   border-radius: 16px;
+}
+
+#error-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  top: 150px;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+}
+
+#logout-error {
+  background-color: #F2F2F2;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  color: #E25822;
+  padding: 6px 10px;
+  border-radius: 16px;
+  margin-top: 16px;
 }
