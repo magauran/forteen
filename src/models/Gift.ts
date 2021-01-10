@@ -1,6 +1,11 @@
 interface GiftAttachment {
   id: string;
   url: string;
+  thumbnails: {
+    large: {
+      url: string;
+    };
+  };
 }
 
 export interface GiftInterface {
@@ -27,6 +32,6 @@ export class Gift implements GiftInterface {
   }
 
   get image (): string {
-    return this.photo[0].url
+    return this.photo[0].thumbnails.large.url
   }
 }

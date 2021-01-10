@@ -9,6 +9,11 @@ export enum TaskType {
 interface TaskAttachment {
   id: string;
   url: string;
+  thumbnails: {
+    large: {
+      url: string;
+    };
+  };
 }
 
 export interface TaskInterface {
@@ -40,7 +45,7 @@ export class Task implements TaskInterface {
   }
 
   get image (): string {
-    return this.attachments[0].url
+    return this.attachments[0].thumbnails.large.url
   }
 
   get dateDescription (): string {
