@@ -92,8 +92,7 @@ export default Vue.extend({
               displayName: this.form.firstName
             })
             ?.then(() => {
-              const userData = new UserData('ALLL', 'GGGG', 1000)
-              alert('CHECCK')
+              const userData = new UserData(this.form.firstName, this.form.secondName, 1000)
               userService.save(userData)
             })
             // eslint-disable-next-line @typescript-eslint/no-empty-function
