@@ -4,5 +4,5 @@
 <script lang="ts" src="./TasksCategory.ts">
 </script>
 
-<style lang="css" scoped src="./TasksCategory.css">
+<style lang="scss" scoped src="./TasksCategory.scss">
 </style>

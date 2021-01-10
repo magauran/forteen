@@ -12,6 +12,9 @@ $ft-primary-button-title: $_ft-gray96;
 $ft-negative-link: $_ft-red;
 $ft-negative-link-active: $_ft-red-dark;
 
+$ft-round-button: $_ft-gray96;
+$ft-round-button-active: $_ft-gray76;
+
 // Text
 $ft-text-primary: $_ft-black;
 $ft-text-secondary: $_ft-gray27;
@@ -37,3 +40,4 @@ $ft-app-gradient: linear-gradient(135deg, $_ft-green 0%, $_ft-blue 100%);
 
 // Separator
 $ft-list-separator: $_ft-light-blue;
+$ft-card-separator: $_ft-gray76;
