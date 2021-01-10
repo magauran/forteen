@@ -5,6 +5,7 @@ import IconPersonalInfo from '@/components/Icons/Profile/IconPersonalInfo.vue'
 import IconShop from '@/components/Icons/Profile/IconShop.vue'
 import IconBase from '@/components/Icons/IconBase.vue'
 import GravatarImage from '@/components/GravatarImage.vue'
+import * as firebase from 'firebase'
 
 export default Vue.extend({
   components: {
@@ -20,6 +21,10 @@ export default Vue.extend({
     }
   },
   methods: {
-
+    logout () {
+      firebase.auth().signOut().then(() =>
+        this.$router.replace('/')
+      )
+    }
   }
 })
