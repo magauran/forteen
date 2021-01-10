@@ -2,60 +2,74 @@
     <v-app>
         <mobile-app-container>
             <h1>Мой профиль</h1>
-            <div id="header-wrapper">
-                <div id="profile-header">
-                    <img id="image-decoration" src="@/assets/task_card-image_decoration.svg" alt="">
-                    <gravatar-image id="user-photo"
-                                    :email="this.$store.state.user.data.email"
-                                    size="100"
-                                    default-img="robohash"
-                    />
+            <div v-if="this.user">
+                <div id="header-wrapper">
+                    <div id="profile-header">
+                        <img id="image-decoration" src="@/assets/task_card-image_decoration.svg" alt="">
+                        <gravatar-image id="user-photo"
+                                        :email="this.$store.state.user.data.email"
+                                        size="100"
+                                        default-img="robohash"
+                        />
+                        <div id="balance">
+                            {{(this.user.balance)}} TC
+                        </div>
+                        <div id="logout" @click="logout">
+                            Выйти
+                        </div>
+                    </div>
+                </div>
+                <p id="username">{{this.user.firstName}}<br/>{{this.user.secondName}}</p>
+                <ul id="profile-menu">
+                    <!-- TODO open tasks history -->
+                    <li class="profile-menu-item" @click="$router.push('/tasks')">
+                        <icon-base icon-name="tasks history"
+                                   width="24"
+                                   height="24"
+                                   icon-color="#343C44"
+                        >
+                            <icon-tasks-history/>
+                        </icon-base>
+                        <p>История заданий</p>
+                    </li>
+                    <li class="divider">
+                        <hr/>
+                    </li>
+                    <li class="profile-menu-item" @click="$router.push('/shop')">
+                        <icon-base icon-name="shop"
+                                   width="24"
+                                   height="24"
+                                   icon-color="#343C44"
+                        >
+                            <icon-shop/>
+                        </icon-base>
+                        <p>Магазин</p>
+                    </li>
+                    <li class="divider">
+                        <hr/>
+                    </li>
+                    <!-- TODO open personal info -->
+                    <li class="profile-menu-item">
+                        <icon-base icon-name="personal info"
+                                   width="24"
+                                   height="24"
+                                   icon-color="#343C44"
+                        >
+                            <icon-personal-info/>
+                        </icon-base>
+                        <p>Личная информация</p>
+                    </li>
+                    <li class="divider">
+                        <hr/>
+                    </li>
+                </ul>
+            </div>
+            <div v-else id="error-block">
+                Не удалось загрузить профиль 😢
+                <div id="logout-error" @click="logout">
+                    Выйти
                 </div>
             </div>
-            <p id="username">{{this.$store.state.user.data.displayName}}</p>
-            <ul id="profile-menu">
-                <!-- TODO open tasks history -->
-                <li class="profile-menu-item" @click="$router.push('/tasks')">
-                    <icon-base icon-name="tasks history"
-                               width="24"
-                               height="24"
-                               icon-color="#343C44"
-                    >
-                        <icon-tasks-history/>
-                    </icon-base>
-                    <p>История заданий</p>
-                </li>
-                <li class="divider">
-                    <hr/>
-                </li>
-                <li class="profile-menu-item" @click="$router.push('/shop')">
-                    <icon-base icon-name="shop"
-                               width="24"
-                               height="24"
-                               icon-color="#343C44"
-                    >
-                        <icon-shop/>
-                    </icon-base>
-                    <p>Магазин</p>
-                </li>
-                <li class="divider">
-                    <hr/>
-                </li>
-                <!-- TODO open personal info -->
-                <li class="profile-menu-item">
-                    <icon-base icon-name="personal info"
-                               width="24"
-                               height="24"
-                               icon-color="#343C44"
-                    >
-                        <icon-personal-info/>
-                    </icon-base>
-                    <p>Личная информация</p>
-                </li>
-                <li class="divider">
-                    <hr/>
-                </li>
-            </ul>
         </mobile-app-container>
     </v-app>
 </div>

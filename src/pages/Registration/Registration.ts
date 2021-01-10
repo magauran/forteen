@@ -2,6 +2,7 @@ import Vue from 'vue'
 import firebase from 'firebase'
 // import { KEYBOARD_DID_CLOSE, KEYBOARD_DID_OPEN, startKeyboardAssist } from '@/utils/Keyboard'
 import MobileAppContainer from '@/components/MobileAppContainer.vue'
+import { UserData, userService } from '@/services/UserService'
 
 export default Vue.extend({
   components: {
@@ -90,10 +91,14 @@ export default Vue.extend({
             ?.updateProfile({
               displayName: this.form.firstName
             })
+            ?.then(() => {
+              const userData = new UserData('ALLL', 'GGGG', 1000)
+              alert('CHECCK')
+              userService.save(userData)
+            })
             // eslint-disable-next-line @typescript-eslint/no-empty-function
             .then(() => {
-              alert('Регистрация успешно завершена')
-              this.$router.replace({ name: 'Tasks' })
+              this.$router.replace('/tasks')
             })
         })
         .catch(err => {

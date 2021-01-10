@@ -4,7 +4,7 @@
             <h1>Магазин</h1>
             <p id="balance">
                 <span>Ваш баланс:</span>
-                <span id="balance-value">100000 TC</span>
+                <span id="balance-value">{{this.user.balance}} TC</span>
             </p>
             <div v-for="(gift) in gifts" v-bind:key="(gift.id)">
                 <div class="gift-card" @click="openGift(`${gift.id}`)">

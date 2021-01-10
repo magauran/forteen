@@ -2,11 +2,17 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+interface StoredUser {
+  displayName: string;
+  email: string;
+  userID: string;
+}
+
 const store = new Vuex.Store({
   state: {
     user: {
       loggedIn: false,
-      data: null
+      data: null as StoredUser | null
     }
   },
   getters: {
@@ -28,7 +34,8 @@ const store = new Vuex.Store({
       if (user) {
         commit('SET_USER', {
           displayName: user.displayName,
-          email: user.email
+          email: user.email,
+          userID: user.uid
         })
       } else {
         commit('SET_USER', null)

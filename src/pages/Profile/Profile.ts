@@ -5,6 +5,8 @@ import IconPersonalInfo from '@/components/Icons/Profile/IconPersonalInfo.vue'
 import IconShop from '@/components/Icons/Profile/IconShop.vue'
 import IconBase from '@/components/Icons/IconBase.vue'
 import GravatarImage from '@/components/GravatarImage.vue'
+import * as firebase from 'firebase'
+import { UserData, userService } from '@/services/UserService'
 
 export default Vue.extend({
   components: {
@@ -17,9 +19,19 @@ export default Vue.extend({
   },
   data () {
     return {
+      user: null as UserData | null
     }
   },
+  mounted () {
+    userService.fetch().then((user) => {
+      this.user = user
+    })
+  },
   methods: {
-
+    logout () {
+      firebase.auth().signOut().then(() =>
+        this.$router.replace('/')
+      )
+    }
   }
 })
